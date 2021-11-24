@@ -1,3 +1,3 @@
 FROM debian:buster
 
-RUN apt update && apt install nginx
+RUN apt-get update && apt-get install nginx

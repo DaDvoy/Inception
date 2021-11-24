@@ -1,2 +1,5 @@
-version: "3.7"
-#fot commit
+version: "3.9"
+
+services:
+    nginx:
+        image: nginx:latest

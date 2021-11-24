@@ -1,4 +1,4 @@
-https://nginx.org/ru/docs//http/ngx_http_core_module.html#location - Модуль ngx_http_core_module
+*https://nginx.org/ru/docs//http/ngx_http_core_module.html#location - Модуль ngx_http_core_module*
 
 1) **default server/ssl** - Если у директивы есть параметр default_server, то сервер, в котором описана эта директива, будет сервером по умолчанию для указанной пары адрес:порт. Если же директив с параметром default_server нет, то сервером по умолчанию будет первый сервер, в котором описана пара адрес:порт.
 
