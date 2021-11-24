@@ -40,24 +40,25 @@ location /images/ {
 
 Итоговая конфигурация блока server должна выглядеть следующим образом:
 
-server {
-    location / {
-        root /data/www;
-    }
+	server {
+		location / {
+			root /data/www;
+	 	}
+	  	location /images/ {
+			root /data;
+		}
+	}
 
-    location /images/ {
-        root /data;
-    }
-}
 Это уже работающая конфигурация сервера, слушающего на стандартном порту 80 и доступного на локальном компьютере по адресу http://localhost/. В ответ на запросы, URI которых начинаются с /images/, сервер будет отправлять файлы из каталога /data/images. Например, на запрос http://localhost/images/example.png nginx отправит в ответ файл /data/images/example.png. Если же этот файл не существует, nginx отправит ответ, указывающий на ошибку 404. Запросы, URI которых не начинаются на /images/, будут отображены на каталог /data/www. Например, в результате запроса http://localhost/some/example.html в ответ будет отправлен файл /data/www/some/example.html.//
 
 
 
 5) **root** - Задаёт корневой каталог для запросов. Например, при такой конфигурации
 
-location /i/ {
-    root /data/w3;
-}
+	`location /i/ {
+		root /data/w3;
+	}`
+	
 в ответ на запрос “/i/top.gif” будет отдан файл /data/w3/i/top.gif.
 
 В значении параметра путь можно использовать переменные, кроме $document_root и $realpath_root.
