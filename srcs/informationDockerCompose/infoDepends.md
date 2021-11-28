@@ -1,4 +1,8 @@
+# links:
+
 https://docker.crank.ru/docs/docker-compose/controlling-startup-order/ - Controlling startup order in Compose;
+
+# Basic part
 
 Вы можете управлять порядком запуска службы с помощью параметра depends_on. Compose всегда запускает контейнеры в порядке зависимостей, где зависимости определяются `depends_on`, `links`, `volume_from` и `network_mode: "service: ..."`.
 
@@ -18,10 +22,10 @@ https://docker.crank.ru/docs/docker-compose/controlling-startup-order/ - Control
 
 Предположим, что для образа вашего приложения в Dockerfile установлен CMD, вы можете обернуть его, установив точку входа в docker-compose.yml:
 
-// "picture from directory"
+<img width="683" alt="Screenshot 2021-07-23 at 12 41 10" src="https://github.com/DaDvoy/Inception/blob/basicPart/srcs/informationDockerCompose/Screen%20Shot%202021-11-28%20at%207.25.51%20PM.png">
 
  - Напишите свой собственный сценарий оболочки, чтобы выполнить проверку работоспособности для конкретного приложения. Например, вы можете подождать, пока Postgres определенно не будет готов принимать команды:
 
-// "picture from directory"
+<img width="683" alt="Screenshot 2021-07-23 at 12 41 10" src="https://github.com/DaDvoy/Inception/blob/basicPart/srcs/informationDockerCompose/Screen%20Shot%202021-11-28%20at%207.25.59%20PM.png">
 
 Вы можете использовать это как сценарий оболочки, как в предыдущем примере, установив точку входа: ./wait-for-postgres.sh db.
