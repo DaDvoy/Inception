@@ -1,5 +1,17 @@
 version: "3.9"
 
 services:
-    nginx:
-        image: nginx:latest
+	nginx:
+		container_name: nginx
+		build: ./requirements/nginx
+		image: nginx
+		restart: always
+		networks:
+			- inception
+		ports:
+			- 443:443
+
+
+networks:
+	inception:
+		driver: bridge
