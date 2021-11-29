@@ -1,8 +1,8 @@
 FROM debian:buster
 
-RUN apt-get update
+RUN apt-get update && apt-get -y upgrade
 RUN apt-get install mariadb-server -y
 
-EXPOSE 3306
+COPY ./mybase ./
 
-VOLUME 
+EXPOSE 3306
