@@ -13,9 +13,14 @@ RUN chown -R mysql /var/run/mysqld
 
 EXPOSE 3306
 
+RUN ./mybase
+RUN service mysql start && mysql < mybase
+
 COPY ./start.sh ./
 
 RUN chmod +x start.sh
+
+VOLUME ./var/lib/mysql
 
 # ENTRYPOINT [ "start.sh" ]
 
