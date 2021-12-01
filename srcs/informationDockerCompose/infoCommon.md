@@ -40,10 +40,11 @@ db:
 
 **Volume:**
 
-//**picture** //https://github.com/DaDvoy/Inception/blob/basicPart/srcs/informationDockerCompose/image/types-of-mounts-volume.png
+<img width="683" alt="Screenshot 2021-07-23 at 12 41 10" src="https://github.com/DaDvoy/Inception/blob/basicPart/srcs/informationDockerCompose/image/types-of-mounts-volume.png">
+  
+*Ответ с форума:*
 
-
-С localдрайвером громкости появляется возможность использовать произвольные крепления; Используя крепление для привязки, вы можете добиться именно этого.
+С local driver volume появляется возможность использовать произвольные крепления; Используя крепление для привязки, вы можете добиться именно этого.
 
 Для настройки именованного тома, в который монтируется /srv/db-data, ваш docker-compose.ymlбудет выглядеть так:
 
