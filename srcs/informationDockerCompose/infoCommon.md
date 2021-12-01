@@ -6,9 +6,14 @@ https://qastack.ru/programming/36387032/how-to-set-a-path-on-host-for-a-named-vo
 
 https://docs.docker.com/compose/compose-file/compose-versioning/#version-2 - Compose file versions and upgrading(VOLUME);
 
+http://rldp.ru/mysql/mysql80/server.htm#error-log - Администрирование сервера MySQL;
 
 
 # Basic part:
+
+*mysqld_safe* - это рекомендуемый способ запустить mysqld в Unix. mysqld_safe добавляет некоторые сервисы системы безопасности, такие как перезапуск сервера, когда ошибка происходит, и журналирование информации во время выполнения в файл журнала ошибок. 
+
+-----------
 
 ```
 db:
