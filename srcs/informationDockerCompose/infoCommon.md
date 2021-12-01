@@ -40,7 +40,7 @@ db:
 
 **Volume:**
 
-//**picture**
+//**picture** //https://github.com/DaDvoy/Inception/blob/basicPart/srcs/informationDockerCompose/image/types-of-mounts-volume.png
 
 
 С localдрайвером громкости появляется возможность использовать произвольные крепления; Используя крепление для привязки, вы можете добиться именно этого.
