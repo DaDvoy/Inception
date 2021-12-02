@@ -2,5 +2,5 @@
 
 sleep 10
 
-service mysql start
-mysql < mybase
+# service mysql start
+# mysql < mybase
