@@ -25,6 +25,19 @@ services:
       - mariadb:/var/lib/mysql
     env_file:
       - .env
+  wordpress:
+    container_name: wordpress
+    build: ./requirements/wordpress
+    image: wordpress
+    restart: always
+    networks:
+      - inception
+    ports:
+      - 9000:9000
+    volumes:
+      - wordpress:/var/lib/wordpress
+    env_file:
+      - .env
     
 
 networks:
@@ -38,3 +51,9 @@ volumes:
       type: none
       o: bind
       device: /home/${USER}/data/mariadb
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USER}/data/wordpress

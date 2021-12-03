@@ -1,12 +1,12 @@
 all:
 		# mkdir -p /home/lmushroo/data/mariadb
-		docker-compose -f ./srcs/docker-compose.yml --env-file src/.env build
+		docker-compose -f ./srcs/docker-compose.yml build
 # --build - создает образы докеров перед запуском контейнеров.
 # Флаг --force-recreate принудительно остановит запущенные в данный
 # момент контейнеры и снова запустит все контейнеры, даже если нет
 # никаких изменений в его конфигурации
 up:
-		docker-compose -f ./srcs/docker-compose.yml --env-file src/.env up
+		docker-compose -f ./srcs/docker-compose.yml up
 # up - запускает контейнеры
 
 clean:
