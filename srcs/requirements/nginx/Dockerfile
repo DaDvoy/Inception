@@ -13,6 +13,8 @@ RUN openssl req -x509 -nodes -days 365 -newkey \
 	-out /etc/ssl/certs/nginx-selfsigned.crt -subj \
 	"/C=RU/L=KAZAN/O=School21/CN=lmushroo.42.fr"
 
+# EXPOSE 443
+
 CMD ["nginx", "-g", "daemon off;"] 
 
 # чтобы nginx оставался на переднем плане,

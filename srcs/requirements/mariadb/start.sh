@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sleep 10
+mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
-# service mysql start
-# mysql < mybase
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/var/lib/mysql'

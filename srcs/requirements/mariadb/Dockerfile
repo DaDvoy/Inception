@@ -6,7 +6,7 @@ RUN apt-get install mariadb-server -y
 COPY /50-server.cnf /etc/mysql/mariadb.conf.d/
 COPY ./mybase ./
 
-RUN mkdir -p /home/lmushroo/data/mariadb
+# RUN mkdir -p /home/lmushroo/data/mariadb
 
 RUN mkdir /var/run/mysqld
 RUN mkfifo /var/run/mysqld/mysqld.sock
@@ -21,7 +21,9 @@ VOLUME ["./var/lib/mysql"]
 EXPOSE 3306
 
 RUN service mysql start && mysql < mybase
+RUN rm -f mybase
+
 # ENTRYPOINT [ "start.sh" ]
 
-# CMD ["./start.sh"]
+# CMD bash ./start.sh
 # CMD /usr/bin/mysqld_safe
