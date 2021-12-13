@@ -1,19 +1,5 @@
 version: "3.9"
 
-volumes:
-  mariadb:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/${USER}/data/mariadb
-  wordpress:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /home/${USER}/data/wordpress
-
 services:
   nginx:
     depends_on:
@@ -56,7 +42,20 @@ services:
       - wordpress:/var/lib/wordpress
     env_file:
       - .env
-    
+
+volumes:
+  mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/${USER}/data/mariadb
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /Users/${USER}/data/wordpress
 
 networks:
   inception:
