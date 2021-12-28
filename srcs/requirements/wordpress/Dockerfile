@@ -13,8 +13,7 @@ RUN rm -f /var/www/wordpress/wp-config-sample.php
 COPY ./wp-config.php ./var/www/wordpress/
 RUN chmod 744 ./var/www/wordpress/wp-config.php
 
-RUN mkdir ./run/php/
+RUN mkdir -p ./run/php/
+# RUN mkdir -p /var/run/
 
-EXPOSE 9000
-
-CMD ./usr/sbin/php-fpm7.3 -F
+CMD /usr/sbin/php-fpm7.3 -F -R

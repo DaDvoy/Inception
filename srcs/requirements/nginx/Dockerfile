@@ -5,7 +5,7 @@ RUN apt-get -y install nginx
 RUN apt-get -y install openssl net-tools
 
 COPY ./nginx.conf /etc/nginx/sites-enabled/default
-COPy ./nginx.conf /etc/nginx/http.d/default.conf
+COPY ./nginx.conf /etc/nginx/http.d/default.conf
 
 RUN openssl req -x509 -nodes -days 365 -newkey \
 	rsa:2048 -keyout /etc/ssl/nginx-selfsigned.key \
