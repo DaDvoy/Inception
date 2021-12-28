@@ -2,8 +2,9 @@ FROM debian:buster
 
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install php7.3 php-mysqli php-fpm mariadb-client
-COPY ./www.conf /etc/php/7.3/fpm/pool.d
-RUN chmod 744 /etc/php/7.3/fpm/pool.d/www.conf
+COPY ./www.conf ./etc/php/7.3/fpm/pool.d
+RUN chmod 744 ./etc/php/7.3/fpm/pool.d/www.conf
+
 
 ADD https://ru.wordpress.org/wordpress-5.7.2-ru_RU.tar.gz /var/www/
 RUN cd /var/www && tar -xzvf wordpress-5.7.2-ru_RU.tar.gz
