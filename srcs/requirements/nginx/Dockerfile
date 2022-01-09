@@ -1,5 +1,7 @@
 FROM debian:buster
 
+RUN sleep 20
+
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install nginx
 RUN apt-get -y install openssl net-tools

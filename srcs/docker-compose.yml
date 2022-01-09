@@ -12,6 +12,10 @@ services:
       - inception
     ports:
       - 443:443
+    volumes:
+      - wordpress:/var/www/html/
+      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
+      - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
     # env_file:
       # - .env
   mariadb:
@@ -23,6 +27,7 @@ services:
       - inception
     volumes:
       - mariadb:/var/lib/mysql
+      - ./requirements/mariadb/tools/error.log:/var/log/mysql/error.log
     # env_file:
       # - .env
   wordpress:
@@ -35,8 +40,8 @@ services:
     networks:
       - inception
     volumes:
-      - wordpress:/var/lib/wordpress
-    # env_file:
+      - wordpress:/var/www/html/
+      - ./requirements/wordpress/tools/debug.log:/var/www/html/wp-content/debug.log
     #   - .env
 
 volumes:
