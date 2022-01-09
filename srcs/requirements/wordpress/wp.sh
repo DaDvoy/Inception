@@ -18,6 +18,6 @@ if [ ! -f /var/www/html/wp-config.php ]; then
       --admin_user=lmushroo \
       --admin_password=lmushroo \
       --admin_email=lmushroo@student.com
-#   wp user create --allow-root ${USER} ${EMAIL} --user_pass=${PASS}
+  wp user create --allow-root ${USER} ${EMAIL} --user_pass=${PASS}
 fi
 exec "$@"
