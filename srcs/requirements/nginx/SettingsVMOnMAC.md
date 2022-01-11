@@ -49,6 +49,7 @@
 для этого прописываем команду `sudo apt install curl`.
 
 - Далее прописываем команды для подкачки докера(инфа с оф,сайта - https://docs.docker.com/engine/install/debian/):
+    - `sudo apt-get remove docker docker-engine docker.io containerd runc`
     - `sudo apt-get update`;
     - 
     ``` 
@@ -68,7 +69,7 @@
 
 - Для проверки работоспособности докера пробуем скачать образ:
   - `docker run hello-world`;
-  - Если вылезает ошибка об отсутствие прав, то даем их с помощью `sudo adduser <твой ник> docker";
+  - Если вылезает ошибка об отсутствие прав, то даем их с помощью `sudo adduser <твой ник> docker`;
   - Снова перезагружаем: `sudo reboot`.
   
 - Снова заходим в вм и пробуем скачать образ:
