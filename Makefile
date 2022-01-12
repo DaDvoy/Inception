@@ -9,10 +9,6 @@ build: create_volume
 
 up:
 	docker-compose -f $(DOC_FILES) up -d
-# con_clear:
-# 	docker stop $$(docker ps -a -q)
-# im_clear:
-# 	docker rmi $$(docker images -a) -f
 
 clean:
 	docker stop $$(docker ps -qa); \
