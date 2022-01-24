@@ -99,6 +99,7 @@
         "host": "localhost",
         "username": "<твой ник>",
         "port": <твой host port>,
+        "password": "<твой пароль>",
         "rootPath": "/home/<твой ник>",
     }
 ```
