@@ -14,6 +14,7 @@
 
     3. А также четыре папки с полезной информацией о MariaDB, Nginx, Wordpress и настройке docker-compose.
 
-Ниже представлена диаграмма работы контейнеров внутри проекта:
+
+**Ниже представлена диаграмма работы контейнеров внутри проекта:**
 
 <img width="683" alt="Diagram of the result" src="https://github.com/DaDvoy/Inception/blob/main/image/diagram.png">
