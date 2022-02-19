@@ -16,4 +16,4 @@
 
 Ниже представлена диаграмма работы контейнеров внутри проекта:
 
-<img width="683" alt="Diagram of the result" src="">
+<img width="683" alt="Diagram of the result" src="https://github.com/DaDvoy/Inception/blob/main/image/diagram.png">
