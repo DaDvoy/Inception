@@ -1,0 +1,64 @@
+version: "3.9"
+
+services:
+  nginx:
+    depends_on:
+      - wordpress
+    container_name: nginx
+    build: ./requirements/nginx
+    image: nginx
+    restart: always
+    networks:
+      - inception
+    ports:
+      - 443:443
+    volumes:
+      - wordpress:/var/www/html/
+      - ./requirements/nginx/tools/nginx-error.log:/var/log/nginx/error.log
+      - ./requirements/nginx/tools/nginx-access.log:/var/log/nginx/access.log
+    env_file:
+      - .env
+  mariadb:
+    container_name: mariadb
+    build: ./requirements/mariadb
+    image: mariadb
+    restart: always
+    networks:
+      - inception
+    volumes:
+      - mariadb:/var/lib/mysql
+      - ./requirements/mariadb/tools/error.log:/var/log/mysql/error.log
+    env_file:
+      - .env
+  wordpress:
+    depends_on:
+      - mariadb
+    container_name: wordpress
+    build: ./requirements/wordpress
+    image: wordpress
+    restart: always
+    networks:
+      - inception
+    volumes:
+      - wordpress:/var/www/html/
+      - ./requirements/wordpress/tools/debug.log:/var/www/html/wp-content/debug.log
+    env_file:
+      - .env
+
+volumes:
+  mariadb:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USER}/data/mariadb
+  wordpress:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/${USER}/data/wordpress
+
+networks:
+  inception:
+    driver: bridge
