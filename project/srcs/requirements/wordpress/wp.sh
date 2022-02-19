@@ -10,7 +10,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
   mv wp-cli.phar /usr/local/bin/wp
   cd /var/www/html/
   wp core download --allow-root
-  mv ./wp-config.php /var/www/html/ #можно перенести в докерфайл
+  mv ./wp-config.php /var/www/html/
   echo "Configuring Wordpress parameters"
   wp config create --allow-root \
       --dbname=${DB_NAME} \
@@ -19,7 +19,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
       --dbhost=${DB_HOST} 
       --dbprefix=wp_
   wp core install --allow-root \
-      --url=localhost/wordpress/ \ #поменять ключи на $(something)
+      --url=localhost/wordpress/ \
       --title=${WP_TITLE} \
       --admin_user=${WP_ADMIN} \
       --admin_password=${WP_ADMIN_PASS} \
